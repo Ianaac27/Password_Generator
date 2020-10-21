@@ -14,23 +14,54 @@
 //THEN a password is generated that matches the selected criteria
 //WHEN the password is generated
 //THEN the password is either displayed in an alert or written to the page
+//*PSEUDOCODE
+//----------------------------------------------------------------------------------------------
 
-// List of Arrays
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
+
+
+// Array lists
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var upperCharacters = upper.split("");
+var upperLetters = upper.split("");
 
 var lower = "abcdefghijklmnopqrstuvwxyz";
-var lowerCharacters = lower.split("");
+var lowerLetters = lower.split("");
 
 var num = "1234567890";
 var numCharacters = num.split("");
 
 var special = "!@#$%&*()/\+-=_<>?~";
-var specialCharcters = special.split("");
+var specialCharacters = special.split("");
 
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+console.log(upperLetters)
+console.log(lowerLetters)
+console.log(numCharacters)
+console.log(specialCharacters)
 
+function generatePassword() {
+
+//Password Length
+const passwordLength = prompt("How many characters would you like your password to contain?");
+
+
+//Confirm use uppercase
+
+const uppercase = confirm("Click OK to confirm including uppercase letters.")
+
+//Confirm use lowercase
+
+const lowercase = confirm("Click OK to confirm including lowercase letters.")
+
+//Confirm use numerical
+
+const numbers = confirm("Click OK to confirm including numbers.")
+
+//Confirm use special
+
+const specChar = confirm("Click OK to confirm including special characters.")
+
+}
 
 // Write password to the #password input
 function writePassword() {
@@ -40,6 +71,12 @@ function writePassword() {
   passwordText.value = password;
 
 }
+
+// var num1 = 10;
+// var length = 
+// var str = 
+// var n = str.length;
+// console.log(n);
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
