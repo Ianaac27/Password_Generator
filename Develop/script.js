@@ -1,4 +1,4 @@
-//*PSUDOCODE*
+//*PSEUDOCODE*
 //GIVEN I need a new, secure password
 //WHEN I click the button to generate a password
 //THEN I am presented with a series of prompts for password criteria
@@ -15,8 +15,22 @@
 //WHEN the password is generated
 //THEN the password is either displayed in an alert or written to the page
 
+// List of Arrays
+var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var upperCharacters = upper.split("");
+
+var lower = "abcdefghijklmnopqrstuvwxyz";
+var lowerCharacters = lower.split("");
+
+var num = "1234567890";
+var numCharacters = num.split("");
+
+var special = "!@#$%&*()/\+-=_<>?~";
+var specialCharcters = special.split("");
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+
 
 // Write password to the #password input
 function writePassword() {
