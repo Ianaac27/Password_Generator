@@ -34,6 +34,8 @@ var numCharacters = num.split("");
 var special = "!@#$%&*()/\+-=_<>?~";
 var specialCharacters = special.split("");
 
+var incorrectPrompt = true;
+
 console.log(upperLetters)
 console.log(lowerLetters)
 console.log(numCharacters)
@@ -42,12 +44,25 @@ console.log(specialCharacters)
 function generatePassword() {
 
 //Password Length
-const passwordLength = prompt("How many characters would you like your password to contain?");
+while (incorrectPrompt){
+const passwordLength = parseInt(prompt("How many characters would you like your password to contain? Pick a number between 8 and 120."));
 
+if ((passwordLength >= 8) && (passwordLength <= 128)) {
+alert("Okay thanks! You password will be" + (passwordLength) + "characters long.");
+incorrectPrompt = false;
+}
+}
 
 //Confirm use uppercase
 
 const uppercase = confirm("Click OK to confirm including uppercase letters.")
+
+if (uppercase) {
+  alert("We will include uppercase letters.");
+}
+else {
+  alert("We will not include uppercase letters." );
+}
 
 //Confirm use lowercase
 
@@ -71,12 +86,6 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
-// var num1 = 10;
-// var length = 
-// var str = 
-// var n = str.length;
-// console.log(n);
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
