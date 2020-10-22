@@ -23,17 +23,17 @@ var generateBtn = document.querySelector("#generate");
 // Array lists
 var passwordLength = "";
 
-var upper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-// var upperLetters = upper.split("");
+var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+ var upperLetters = upper.split("");
 
-var lower = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-// var lowerLetters = lower.split("");
+var lower = "abcdefghijklmnopqrstuvwxyz";
+ var lowerLetters = lower.split("");
 
-var num = ["0","1","2","3","4","5","6","7","8","9"];
-// var numCharacters = num.split("");
+var num = "1234567890";
+ var numCharacters = num.split("");
 
-var special = ["!","@","#","$","%","&","*","(",")","/","<",">","?","~"];
-// var specialCharacters = special.split("");
+var special = "!@#$%&*()/<>?~";
+ var specialCharacters = special.split("");
 
 var incorrectPrompt = true;
 
@@ -59,7 +59,7 @@ var numbers = confirm("Click OK to confirm including numbers.")
 var specChar = confirm("Click OK to confirm including special characters.")
 
 if (uppercase) {
-  randomArray = randomArray.concat(upper)
+  randomArray = randomArray.concat(upperLetters)
 //    alert("We will include uppercase letters.");
 //  }
 //  else {
@@ -67,7 +67,7 @@ if (uppercase) {
 }
 
 if (lowercase) {
-  randomArray = randomArray.concat(lower)
+  randomArray = randomArray.concat(lowerLetters)
 //    alert("We will include lowercase letters."); 
 //  }
 //  else {
@@ -75,7 +75,7 @@ if (lowercase) {
 }
 
 if (numbers) {
-  randomArray = randomArray.concat(num)
+  randomArray = randomArray.concat(numCharacters)
 //    alert("We will include numbers.") 
 //  }
 //  else {
@@ -83,7 +83,7 @@ if (numbers) {
 }
 
 if (specChar) {
-  randomArray = randomArray.concat(special)
+  randomArray = randomArray.concat(specialCharacters)
 //    alert("We will include special characters.") 
 //  }
 //  else {
