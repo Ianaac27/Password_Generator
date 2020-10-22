@@ -1,4 +1,4 @@
-//*PSEUDOCODE*
+//*CRITERIA*
 //GIVEN I need a new, secure password
 //WHEN I click the button to generate a password
 //THEN I am presented with a series of prompts for password criteria
@@ -14,7 +14,7 @@
 //THEN a password is generated that matches the selected criteria
 //WHEN the password is generated
 //THEN the password is either displayed in an alert or written to the page
-//*PSEUDOCODE
+//*CRITERIA*
 //----------------------------------------------------------------------------------------------
 
 // Assignment Code
@@ -35,19 +35,19 @@ var numCharacters = num.split("");
 var special = "!@#$%&*()/<>?~";
 var specialCharacters = special.split("");
 
-var incorrectPrompt = true;
+ var incorrectPrompt = true;
 
 function generatePassword() {
 
 //Password Length
-while (incorrectPrompt){
-var passwordLength = prompt("How many characters would you like your password to contain? Pick a number between 8 and 128.");
+ while (incorrectPrompt){
+ passwordLength = parseInt(prompt("How many characters would you like your password to contain? Pick a number between 8 and 128."));
 
-if (8 <= passwordLength && passwordLength <= 128) {
-alert("Okay thanks! Your password will be " + (passwordLength) + " characters long.");
-incorrectPrompt = false;
-}
-}
+ if (8 <= passwordLength && passwordLength <= 128) {
+ alert("Okay thanks! Your password will be " + (passwordLength) + " characters long.");
+ incorrectPrompt = false;
+ }
+ }
 
 //Random list of characters
 var randomArray = [];
@@ -59,7 +59,7 @@ var numbers = confirm("Click OK to confirm including numbers.")
 var specChar = confirm("Click OK to confirm including special characters.")
 
 if (uppercase) {
-  randomArray = randomArray.concat(upperLetters)
+  randomArray = randomArray.concat(upperLetters);
     alert("We will include uppercase letters.");
   }
   else {
@@ -67,7 +67,7 @@ if (uppercase) {
 }
 
 if (lowercase) {
-  randomArray = randomArray.concat(lowerLetters)
+  randomArray = randomArray.concat(lowerLetters);
     alert("We will include lowercase letters."); 
   }
   else {
@@ -75,21 +75,22 @@ if (lowercase) {
 }
 
 if (numbers) {
-  randomArray = randomArray.concat(numCharacters)
-    alert("We will include numbers.") 
+  randomArray = randomArray.concat(numCharacters);
+    alert("We will include numbers."); 
   }
   else {
     alert("We will not include numbers." );
 }
 
 if (specChar) {
-  randomArray = randomArray.concat(specialCharacters)
-    alert("We will include special characters.") 
+  randomArray = randomArray.concat(specialCharacters);
+    alert("We will include special characters."); 
  }
   else {
     alert("We will not include special characters." );
 }
 
+//Loop to generate a random password
 var randomPassword = "";
 
 for (var i = 0; i < passwordLength; i++) {
