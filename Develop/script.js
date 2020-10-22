@@ -20,21 +20,20 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-//New password string
-var password = "";
-
 // Array lists
-var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var upperLetters = upper.split("");
+var passwordLength = "";
 
-var lower = "abcdefghijklmnopqrstuvwxyz";
-var lowerLetters = lower.split("");
+var upper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+// var upperLetters = upper.split("");
 
-var num = "1234567890";
-var numCharacters = num.split("");
+var lower = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+// var lowerLetters = lower.split("");
 
-var special = "!@#$%&*()/<>?~";
-var specialCharacters = special.split("");
+var num = ["0","1","2","3","4","5","6","7","8","9"];
+// var numCharacters = num.split("");
+
+var special = ["!","@","#","$","%","&","*","(",")","/","<",">","?","~"];
+// var specialCharacters = special.split("");
 
 var incorrectPrompt = true;
 
@@ -42,7 +41,7 @@ function generatePassword() {
 
 //Password Length
 while (incorrectPrompt){
-var passwordLength = parseInt(prompt("How many characters would you like your password to contain? Pick a number between 8 and 120."));
+var passwordLength = parseInt(prompt("How many characters would you like your password to contain? Pick a number between 8 and 128."));
 
 if ((passwordLength >= 8) && (passwordLength <= 128)) {
 alert("Okay thanks! Your password will be " + (passwordLength) + " characters long.");
@@ -53,60 +52,53 @@ incorrectPrompt = false;
 //Random list of characters
 var randomArray = [];
 
-//Confirm use uppercase
-
+//Confirmations
 var uppercase = confirm("Click OK to confirm including uppercase letters.")
-
-if (uppercase) {
-  alert("We will include uppercase letters."); 
-  // && randomArray.push(upperLetters);
-}
-else {
-  alert("We will not include uppercase letters.");
-}
-
-//Confirm use lowercase
-
 var lowercase = confirm("Click OK to confirm including lowercase letters.")
-
-if (lowercase) {
-  alert("We will include lowercase letters."); 
-  // && randomArray.push(lowerLetters);
-}
-else {
-  alert("We will not include lowercase letters." );
-}
-
-//Confirm use numerical
-
 var numbers = confirm("Click OK to confirm including numbers.")
-
-if (numbers) {
-  alert("We will include numbers.") 
-  // && randomArray.push(numCharacters);
-}
-else {
-  alert("We will not include numbers." );
-}
-
-//Confirm use special
-
 var specChar = confirm("Click OK to confirm including special characters.")
 
+if (uppercase) {
+  randomArray = randomArray.push(upper);
+   alert("We will include uppercase letters.");
+ }
+ else {
+   alert("We will not include uppercase letters.");
+}
+
+if (lowercase) {
+  randomArray = randomArray.push(lower);
+   alert("We will include lowercase letters."); 
+ }
+ else {
+   alert("We will not include lowercase letters." );
+}
+
+if (numbers) {
+  randomArray = randomArray.push(num);
+   alert("We will include numbers.") 
+ }
+ else {
+   alert("We will not include numbers." );
+}
+
 if (specChar) {
-  alert("We will include special characters.") 
-  // && randomArray.push(specialCharacters);
-}
-else {
-  alert("We will not include special characters." );
+  randomArray = randomArray.push(special);
+   alert("We will include special characters.") 
+ }
+ else {
+   alert("We will not include special characters." );
 }
 
-// for (var i = 0; i < passwordLength.length; i++) {
-//    var rchar = Math.floor(Math.random() * randomArray.length);
-//    password += randomArray.substring(rchar,rchar + 1);
-//   }
+// var randomCharacter = "";
+var randomPassword = "";
 
-  return password;
+for (var i = 0; i < passwordLength; i++) {
+    var randomCharacter = Math.floor(Math.random() * randomArray.length);
+    randomPassword += randomArray.substring(randomCharacter,randomCharacter + 1);
+   }
+
+  return randomPassword;
 }
 
 // Write password to the #password input
