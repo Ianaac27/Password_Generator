@@ -23,19 +23,15 @@ var generateBtn = document.querySelector("#generate");
 // Array lists
 var passwordLength = "";
 
-var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var upperLetters = upper.split("");
+var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-var lower = "abcdefghijklmnopqrstuvwxyz";
-var lowerLetters = lower.split("");
+var lower = "abcdefghijklmnopqrstuvwxyz".split("");
 
-var num = "1234567890";
-var numCharacters = num.split("");
+var num = "1234567890".split("");
 
-var special = "!@#$%&*()/<>?~";
-var specialCharacters = special.split("");
+var special = "!@#$%&*()/<>?~".split("");
 
- var incorrectPrompt = true;
+var incorrectPrompt = true;
 
 function generatePassword() {
 
@@ -59,36 +55,36 @@ var numbers = confirm("Click OK to confirm including numbers.")
 var specChar = confirm("Click OK to confirm including special characters.")
 
 if (uppercase) {
-  randomArray = randomArray.concat(upperLetters);
-    alert("We will include uppercase letters.");
-  }
-  else {
-    alert("We will not include uppercase letters.");
+  randomArray = randomArray.concat(upper);
+     alert("We will include uppercase letters.");
+   }
+   else {
+     alert("We will not include uppercase letters.");
 }
 
 if (lowercase) {
-  randomArray = randomArray.concat(lowerLetters);
-    alert("We will include lowercase letters."); 
-  }
-  else {
-    alert("We will not include lowercase letters." );
+  randomArray = randomArray.concat(lower);
+     alert("We will include lowercase letters."); 
+   }
+   else {
+     alert("We will not include lowercase letters." );
 }
 
 if (numbers) {
-  randomArray = randomArray.concat(numCharacters);
-    alert("We will include numbers."); 
-  }
+  randomArray = randomArray.concat(num);
+     alert("We will include numbers."); 
+   }
   else {
-    alert("We will not include numbers." );
+     alert("We will not include numbers." );
 }
 
 if (specChar) {
-  randomArray = randomArray.concat(specialCharacters);
+  randomArray = randomArray.concat(special);
     alert("We will include special characters."); 
- }
+  }
   else {
-    alert("We will not include special characters." );
-}
+   alert("We will not include special characters." );
+ } 
 
 //Loop to generate a random password
 var randomPassword = "";
