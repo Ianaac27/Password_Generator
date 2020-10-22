@@ -24,16 +24,16 @@ var generateBtn = document.querySelector("#generate");
 var passwordLength = "";
 
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
- var upperLetters = upper.split("");
+var upperLetters = upper.split("");
 
 var lower = "abcdefghijklmnopqrstuvwxyz";
- var lowerLetters = lower.split("");
+var lowerLetters = lower.split("");
 
 var num = "1234567890";
- var numCharacters = num.split("");
+var numCharacters = num.split("");
 
 var special = "!@#$%&*()/<>?~";
- var specialCharacters = special.split("");
+var specialCharacters = special.split("");
 
 var incorrectPrompt = true;
 
@@ -43,7 +43,7 @@ function generatePassword() {
 while (incorrectPrompt){
 var passwordLength = prompt("How many characters would you like your password to contain? Pick a number between 8 and 128.");
 
-if (passwordLength >= 8 && passwordLength <= 128) {
+if (8 <= passwordLength && passwordLength <= 128) {
 alert("Okay thanks! Your password will be " + (passwordLength) + " characters long.");
 incorrectPrompt = false;
 }
@@ -60,39 +60,40 @@ var specChar = confirm("Click OK to confirm including special characters.")
 
 if (uppercase) {
   randomArray = randomArray.concat(upperLetters)
-//    alert("We will include uppercase letters.");
-//  }
-//  else {
-//    alert("We will not include uppercase letters.");
+    alert("We will include uppercase letters.");
+  }
+  else {
+    alert("We will not include uppercase letters.");
 }
 
 if (lowercase) {
   randomArray = randomArray.concat(lowerLetters)
-//    alert("We will include lowercase letters."); 
-//  }
-//  else {
-//    alert("We will not include lowercase letters." );
+    alert("We will include lowercase letters."); 
+  }
+  else {
+    alert("We will not include lowercase letters." );
 }
 
 if (numbers) {
   randomArray = randomArray.concat(numCharacters)
-//    alert("We will include numbers.") 
-//  }
-//  else {
-//    alert("We will not include numbers." );
+    alert("We will include numbers.") 
+  }
+  else {
+    alert("We will not include numbers." );
 }
 
 if (specChar) {
   randomArray = randomArray.concat(specialCharacters)
-//    alert("We will include special characters.") 
-//  }
-//  else {
-//    alert("We will not include special characters." );
+    alert("We will include special characters.") 
+ }
+  else {
+    alert("We will not include special characters." );
 }
 
+var randomPassword = "";
 
 for (var i = 0; i < passwordLength; i++) {
-    var randomPassword = randomPassword + [Math.floor(Math.random() * randomArray.length)];
+    randomPassword = randomPassword + [Math.floor(Math.random() * randomArray.length)];
    }
 
   return randomPassword;
