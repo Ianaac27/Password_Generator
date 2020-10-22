@@ -34,12 +34,8 @@ var numCharacters = num.split("");
 var special = "!@#$%&*()/\+-=_<>?~";
 var specialCharacters = special.split("");
 
-console.log(upperLetters)
-console.log(lowerLetters)
-console.log(numCharacters)
-console.log(specialCharacters)
-
 //Generate Pasword Function
+
 var incorrectPrompt = true;
 
 function generatePassword() {
@@ -54,13 +50,18 @@ incorrectPrompt = false;
 }
 }
 
+//New list of characters
+var randomArray = [];
+
+//New password string
+var password = "";
+
 //Confirm use uppercase
 
-const uppercase = confirm("Click OK to confirm including uppercase letters.")
+var uppercase = confirm("Click OK to confirm including uppercase letters.")
 
 if (uppercase) {
-  alert("We will include uppercase letters.");
-  randomArray.fill(upperLetters);
+  alert("We will include uppercase letters.") && randomArray.push(upperLetters);
 }
 else {
   alert("We will not include uppercase letters.");
@@ -68,11 +69,10 @@ else {
 
 //Confirm use lowercase
 
-const lowercase = confirm("Click OK to confirm including lowercase letters.")
+var lowercase = confirm("Click OK to confirm including lowercase letters.")
 
 if (lowercase) {
-  alert("We will include lowercase letters.");
-  randomArray.fill(lowerLetters);
+  alert("We will include lowercase letters.") && randomArray.push(lowerLetters);
 }
 else {
   alert("We will not include lowercase letters." );
@@ -80,11 +80,10 @@ else {
 
 //Confirm use numerical
 
-const numbers = confirm("Click OK to confirm including numbers.")
+var numbers = confirm("Click OK to confirm including numbers.")
 
 if (numbers) {
-  alert("We will include numbers.");
-  randomArray.fill(numCharacters);
+  alert("We will include numbers.") && randomArray.push(numCharacters);
 }
 else {
   alert("We will not include numbers." );
@@ -92,23 +91,27 @@ else {
 
 //Confirm use special
 
-const specChar = confirm("Click OK to confirm including special characters.")
+var specChar = confirm("Click OK to confirm including special characters.")
 
 if (specChar) {
-  alert("We will include special characters.");
-  randomArray.fill(specialCharacters);
+  alert("We will include special characters.") && randomArray.push(specialCharacters);
 }
 else {
   alert("We will not include special characters." );
 }
 
 //Loop to create random password
-var randomArray = [];
-var randomString = '';
+
+// while( password.length < passwordLength) {
+
+// }
+
 for (var i = 0; i < passwordLength.length; i++) {
-  var rchar = Math.floor(Math.random() * newArray.length);
-  randomString += newArray.substring(rchar,rchar + 1);
-}
+   var rchar = Math.floor(Math.random() * randomArray.length);
+   password += randomArray.substring(rchar,rchar + 1);
+  }
+
+  return password;
 }
 
 // Write password to the #password input
