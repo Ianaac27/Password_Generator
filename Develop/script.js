@@ -34,12 +34,13 @@ var numCharacters = num.split("");
 var special = "!@#$%&*()/\+-=_<>?~";
 var specialCharacters = special.split("");
 
-var incorrectPrompt = true;
-
 console.log(upperLetters)
 console.log(lowerLetters)
 console.log(numCharacters)
 console.log(specialCharacters)
+
+//Generate Pasword Function
+var incorrectPrompt = true;
 
 function generatePassword() {
 
@@ -48,7 +49,7 @@ while (incorrectPrompt){
 const passwordLength = parseInt(prompt("How many characters would you like your password to contain? Pick a number between 8 and 120."));
 
 if ((passwordLength >= 8) && (passwordLength <= 128)) {
-alert("Okay thanks! You password will be" + (passwordLength) + "characters long.");
+alert("Okay thanks! Your password will be " + (passwordLength) + " characters long.");
 incorrectPrompt = false;
 }
 }
@@ -59,23 +60,55 @@ const uppercase = confirm("Click OK to confirm including uppercase letters.")
 
 if (uppercase) {
   alert("We will include uppercase letters.");
+  randomArray.fill(upperLetters);
 }
 else {
-  alert("We will not include uppercase letters." );
+  alert("We will not include uppercase letters.");
 }
 
 //Confirm use lowercase
 
 const lowercase = confirm("Click OK to confirm including lowercase letters.")
 
+if (lowercase) {
+  alert("We will include lowercase letters.");
+  randomArray.fill(lowerLetters);
+}
+else {
+  alert("We will not include lowercase letters." );
+}
+
 //Confirm use numerical
 
 const numbers = confirm("Click OK to confirm including numbers.")
+
+if (numbers) {
+  alert("We will include numbers.");
+  randomArray.fill(numCharacters);
+}
+else {
+  alert("We will not include numbers." );
+}
 
 //Confirm use special
 
 const specChar = confirm("Click OK to confirm including special characters.")
 
+if (specChar) {
+  alert("We will include special characters.");
+  randomArray.fill(specialCharacters);
+}
+else {
+  alert("We will not include special characters." );
+}
+
+//Loop to create random password
+var randomArray = [];
+var randomString = '';
+for (var i = 0; i < passwordLength.length; i++) {
+  var rchar = Math.floor(Math.random() * newArray.length);
+  randomString += newArray.substring(rchar,rchar + 1);
+}
 }
 
 // Write password to the #password input
