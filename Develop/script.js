@@ -42,7 +42,6 @@ function generatePassword() {
  if (8 <= passwordLength && passwordLength <= 128) {
  alert("Okay thanks! Your password will be " + (passwordLength) + " characters long.");
  incorrectPrompt = false;
-//  return;
  }
  }
 
@@ -64,7 +63,6 @@ if (uppercase) {
      alert("We will not include uppercase letters.");
 }
 
-// console.log(upper);
 console.log(randomArray);
 
 if (lowercase) {
@@ -98,20 +96,18 @@ if (specChar) {
  console.log(randomArray);
 
 //Loop to generate a random password
-var randomNum;
-var randomPassword;
-// var newArray = [];
+var randomNum = "";
+var randomPassword = "";
+
 for (var i = 0; i < passwordLength; i++) {
     randomNum = Math.floor(Math.random() * randomArray.length);
 
-   randomPassword = randomArray[randomNum];
+   randomPassword += randomArray[randomNum];
 
    console.log(randomPassword);
 }
 
-  // newArray.push(randomPassword);
-  return randomPassword;
-  
+  return randomPassword; 
 }
 
 // Write password to the #password input
