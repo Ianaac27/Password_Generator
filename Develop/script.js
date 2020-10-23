@@ -22,16 +22,12 @@ var generateBtn = document.querySelector("#generate");
 
 // Array lists
 var passwordLength = "";
+var incorrectPrompt = true;
 
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-
 var lower = "abcdefghijklmnopqrstuvwxyz".split("");
-
 var num = "1234567890".split("");
-
 var special = "!@#$%&*()/<>?~".split("");
-
-var incorrectPrompt = true;
 
 function generatePassword() {
 
@@ -45,8 +41,8 @@ function generatePassword() {
  }
  }
 
-//Random list of characters
-var randomArray = [];
+//Chosen list of characters
+var chosenArray = [];
 
 //Confirmations
 var uppercase = confirm("Click OK to confirm including uppercase letters.")
@@ -55,59 +51,54 @@ var numbers = confirm("Click OK to confirm including numbers.")
 var specChar = confirm("Click OK to confirm including special characters.")
 
 if (uppercase) {
-  randomArray = randomArray.concat(upper);
-     alert("We will include uppercase letters.");
-     
+  chosenArray = chosenArray.concat(upper);
+     alert("We will include uppercase letters.");     
    }
    else {
      alert("We will not include uppercase letters.");
 }
-
-console.log(randomArray);
+console.log(chosenArray);
 
 if (lowercase) {
-  randomArray = randomArray.concat(lower);
+  chosenArray = chosenArray.concat(lower);
      alert("We will include lowercase letters."); 
    }
    else {
      alert("We will not include lowercase letters." );
 }
-
-console.log(randomArray);
+console.log(chosenArray);
 
 if (numbers) {
-  randomArray = randomArray.concat(num);
+  chosenArray = chosenArray.concat(num);
      alert("We will include numbers."); 
    }
   else {
      alert("We will not include numbers." );
 }
-
-console.log(randomArray);
+console.log(chosenArray);
 
 if (specChar) {
-  randomArray = randomArray.concat(special);
+  chosenArray = chosenArray.concat(special);
     alert("We will include special characters."); 
   }
   else {
-   alert("We will not include special characters." );
+    alert("We will not include special characters." );
  } 
-
- console.log(randomArray);
+console.log(chosenArray);
 
 //Loop to generate a random password
 var randomNum = "";
 var randomPassword = "";
 
 for (var i = 0; i < passwordLength; i++) {
-    randomNum = Math.floor(Math.random() * randomArray.length);
+  randomNum = Math.floor(Math.random() * chosenArray.length);
+  randomPassword += chosenArray[randomNum];
 
-   randomPassword += randomArray[randomNum];
-
-   console.log(randomPassword);
+  console.log(randomPassword);
 }
 
   return randomPassword; 
+
 }
 
 // Write password to the #password input
