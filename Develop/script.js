@@ -42,6 +42,7 @@ function generatePassword() {
  if (8 <= passwordLength && passwordLength <= 128) {
  alert("Okay thanks! Your password will be " + (passwordLength) + " characters long.");
  incorrectPrompt = false;
+//  return;
  }
  }
 
@@ -57,10 +58,14 @@ var specChar = confirm("Click OK to confirm including special characters.")
 if (uppercase) {
   randomArray = randomArray.concat(upper);
      alert("We will include uppercase letters.");
+     
    }
    else {
      alert("We will not include uppercase letters.");
 }
+
+// console.log(upper);
+console.log(randomArray);
 
 if (lowercase) {
   randomArray = randomArray.concat(lower);
@@ -70,6 +75,8 @@ if (lowercase) {
      alert("We will not include lowercase letters." );
 }
 
+console.log(randomArray);
+
 if (numbers) {
   randomArray = randomArray.concat(num);
      alert("We will include numbers."); 
@@ -77,6 +84,8 @@ if (numbers) {
   else {
      alert("We will not include numbers." );
 }
+
+console.log(randomArray);
 
 if (specChar) {
   randomArray = randomArray.concat(special);
@@ -86,14 +95,23 @@ if (specChar) {
    alert("We will not include special characters." );
  } 
 
+ console.log(randomArray);
+
 //Loop to generate a random password
-var randomPassword = "";
-
+var randomNum;
+var randomPassword;
+// var newArray = [];
 for (var i = 0; i < passwordLength; i++) {
-    randomPassword = randomPassword + [Math.floor(Math.random() * randomArray.length)];
-   }
+    randomNum = Math.floor(Math.random() * randomArray.length);
 
+   randomPassword = randomArray[randomNum];
+
+   console.log(randomPassword);
+}
+
+  // newArray.push(randomPassword);
   return randomPassword;
+  
 }
 
 // Write password to the #password input
