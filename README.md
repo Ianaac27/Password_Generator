@@ -8,4 +8,4 @@ Here is a mock of the Password Generator.
 ![Password_Generator](Assets/screenshotPG.png)
 
 Link
-Take a look at the live version [here.]()
+Take a look at the live version [here.](https://ianaac27.github.io/Password_Generator/)
