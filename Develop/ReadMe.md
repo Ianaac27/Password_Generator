@@ -8,7 +8,7 @@ This Password Generator features my skillset applying functions by utulizing Jav
 
 Here is a mock of the Password Generator.
 
-![Password_Generator](assets/screenshot.png)
+![Password Generator](screenshotPG.png)
 
 ## Link
 
