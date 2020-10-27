@@ -78,12 +78,12 @@ for (var i = 0; i < passwordLength; i++) {
 
   charCheck = chosenArray[i % chosenArray.length];
   randomNum = Math.floor(Math.random() * charCheck.length);
-  randomPassword[i] = charCheck[randomNum];
+  randomPassword += charCheck[randomNum];
 
   console.log(randomPassword);
 }
 
-  return randomPassword.join(""); 
+  return randomPassword; 
 
 }
 
