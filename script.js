@@ -32,7 +32,7 @@ var numbers = confirm("Click OK to confirm including numbers.")
 var specChar = confirm("Click OK to confirm including special characters.")
 
 if (uppercase) {
-  chosenArray = chosenArray.concat(upper);
+  chosenArray.push(upper);
      alert("We will include uppercase letters.");     
    }
    else {
@@ -41,7 +41,7 @@ if (uppercase) {
 console.log(chosenArray);
 
 if (lowercase) {
-  chosenArray = chosenArray.concat(lower);
+  chosenArray.push(lower);
      alert("We will include lowercase letters."); 
    }
    else {
@@ -50,7 +50,7 @@ if (lowercase) {
 console.log(chosenArray);
 
 if (numbers) {
-  chosenArray = chosenArray.concat(num);
+  chosenArray.push(num);
      alert("We will include numbers."); 
    }
   else {
@@ -59,7 +59,7 @@ if (numbers) {
 console.log(chosenArray);
 
 if (specChar) {
-  chosenArray = chosenArray.concat(special);
+  chosenArray.push(special);
     alert("We will include special characters."); 
   }
   else {
@@ -67,18 +67,23 @@ if (specChar) {
  } 
 console.log(chosenArray);
 
+//Check for guarenteed characters
+var charCheck= [];
+
 //Loop to generate a random password
 var randomNum = "";
-var randomPassword = "";
+var randomPassword = [];
 
 for (var i = 0; i < passwordLength; i++) {
-  randomNum = Math.floor(Math.random() * chosenArray.length);
-  randomPassword += chosenArray[randomNum];
+
+  charCheck = chosenArray[i % chosenArray.length];
+  randomNum = Math.floor(Math.random() * charCheck.length);
+  randomPassword[i] = charCheck[randomNum];
 
   console.log(randomPassword);
 }
 
-  return randomPassword; 
+  return randomPassword.join(""); 
 
 }
 
