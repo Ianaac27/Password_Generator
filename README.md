@@ -5,7 +5,7 @@ This Password Generator features my skillset applying functions by utulizing Jav
 # Screenshot
 Here is a mock of the Password Generator.
 
-![Password_Generator](Assets/screenshotPG.png)
+![Password_Generator](Assets/screenshot2.png)
 
 # Link
 Take a look at the live version [here.](https://ianaac27.github.io/Password_Generator/)
