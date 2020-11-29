@@ -1,5 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var resetBtn = document.querySelector("#reset");
 
 // Array lists
 var passwordLength = "";
@@ -96,5 +97,12 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
+
+// Reset password
+function resetPassword() {
+  location.reload();
+}
+
+// Add event listener to generate button and reset button
 generateBtn.addEventListener("click", writePassword);
+resetBtn.addEventListener("click", resetPassword);
