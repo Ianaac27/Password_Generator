@@ -7,8 +7,8 @@ This Password Generator features my skillset in JavaScript by applying a chain o
 * [License](#license)
 * [Contributing](#contributing)
 * [Screenshot](#screenshot)
-* [Questions](#questions)
 * [Link](#link)
+* [Questions](#questions)
 
 ## License
 
